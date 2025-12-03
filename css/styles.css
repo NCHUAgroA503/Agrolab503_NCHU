@@ -1,0 +1,51 @@
+/* Basic responsive styling for Agrolab503 pages */
+:root {
+  --accent: #2c6f3b;
+  --muted: #666;
+  --bg: #f8f9f9;
+  --max-width: 1000px;
+  --radius: 6px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: #111; line-height: 1.45; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 1rem; }
+
+.site-header { background: #fff; border-bottom: 1px solid #e6e6e6; }
+.site-header .container { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.site-header h1 { margin: 0; font-size:1.1rem; }
+.site-header nav a { margin-left: 0.75rem; color: var(--accent); text-decoration:none; font-weight:600; }
+
+.hero { display:flex; gap:1rem; align-items:center; margin: 1rem 0; flex-wrap:wrap; }
+.hero-photo { width: 320px; max-width: 100%; border-radius: var(--radius); object-fit:cover; }
+.hero-text { flex:1; min-width: 220px; }
+
+h2,h3 { color: var(--accent); margin-top: 0.2rem; }
+
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1rem; margin-top:0.75rem; }
+.grid.small-photo img { height:150px; object-fit:cover; width:100%; border-radius: var(--radius); }
+.card { background:#fff; padding:0.75rem; border-radius: var(--radius); box-shadow:0 1px 2px rgba(0,0,0,0.04); text-align:center; }
+.card img { width:100%; height:200px; object-fit:cover; border-radius: var(--radius); }
+
+.professor-profile { display:flex; gap:1rem; align-items:flex-start; flex-wrap:wrap; }
+.prof-photo { width:220px; border-radius:var(--radius); object-fit:cover; }
+
+.map-wrap { margin-top:0.5rem; border-radius: var(--radius); overflow:hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+
+.site-footer { margin-top:2rem; padding:1rem 0; background:transparent; color:var(--muted); text-align:center; }
+
+/* Activities */
+.activity { display:flex; gap:1rem; background:#fff; padding:0.75rem; border-radius:var(--radius); margin-bottom:0.75rem; align-items:center; }
+.activity img { width:160px; height:100px; object-fit:cover; border-radius: 6px; }
+
+/* Thesis list */
+.thesis-list { list-style:none; padding:0; margin:0; }
+.thesis-list li { background:#fff; padding:0.75rem; border-radius:var(--radius); margin-bottom:0.6rem; }
+
+/* Small screens */
+@media (max-width:640px) {
+  .site-header .container { flex-direction:column; align-items:flex-start; gap:0.5rem; }
+  .hero { flex-direction:column; }
+  .activity { flex-direction:column; }
+}
